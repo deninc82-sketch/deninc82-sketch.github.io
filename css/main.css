@@ -1,29 +1,100 @@
-body { 
-    font-family: Arial, sans-serif; 
-    margin: 0; 
-    padding: 0; 
-}
-main { 
-    padding: 20px; 
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    font-size: 1rem;
+    min-height: 100vh;
+    background: linear-gradient(to right, 
+        #e8f5e9 5%, 
+        #c8e6c9 17%, 
+        #81c784 40%, 
+        #388e3c 85%, 
+        #1b5e20 95%
+    );
 }
 
+main {
+    padding: 20px;
+}
 
-/* 1. Визначити для усіх елементів h1, h2, h3 властивість колір тексту - сірий */
 h1, h2, h3 {
+    font-weight: 700;
     color: grey;
 }
 
-/* 2. Визначити для елемента з ідентифікатором main властивість color: #e60202; */
+h1 {
+    font-size: 1.45rem;
+}
+
+h2 {
+    font-size: 1.3rem;
+}
+
 #main {
     color: #e60202;
 }
 
-/* 3. Визначити для елемента з класом h2 властивість колір: червоний */
 .h2 {
     color: red;
 }
 
-/* 4. Встановити для елемента з класом heading колір тексту у зелений */
 .heading {
     color: green;
+}
+
+div {
+    font-size: 1em;
+}
+
+div span {
+    font-size: 1.6em; 
+}
+
+strong {
+    font-size: 1.6em;
+}
+
+strong strong {
+    font-size: 1em;
+}
+
+.list-unstyled {
+    list-style: none;
+}
+
+.negative {
+    margin: 20px 0;
+    padding: 20px;
+    color: #ffffff;
+    background: linear-gradient(to left, 
+        #e3f2fd -50%, 
+        #90caf9 -10%, 
+        #42a5f5 0%, 
+        #1565c0 100%, 
+        #0d47a1 150%
+    );
+}
+
+.percents {
+    margin: 20px 0;
+    padding: 20px;
+    color: #ffffff;
+    background: linear-gradient(to bottom, 
+        #e8f5e9 2em, 
+        #c8e6c9 4em, 
+        #a5d6a7 8em, 
+        #66bb6a 16em, 
+        #43a047 32em, 
+        #2e7d32 64em, 
+        #1b5e20 128em
+    );
+}
+
+.radial {
+    margin: 20px 0;
+    padding: 20px;
+    color: #ffffff;
+    background: 
+        radial-gradient(ellipse at top, orange, transparent), 
+        radial-gradient(ellipse at bottom, red, transparent);
 }
