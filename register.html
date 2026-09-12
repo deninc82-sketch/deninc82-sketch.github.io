@@ -14,8 +14,9 @@
 
     <nav>
         <ul>
-            <li><a href="#">Головна</a></li>
-            <li><a href="#">Про нас</a></li>
+            <!-- Тепер посилання ведуть на реальні сторінки проєкту -->
+            <li><a href="index.html">Головна</a></li>
+            <li><a href="register.html">Реєстрація</a></li>
         </ul>
     </nav>
 
@@ -54,19 +55,17 @@
                     <input type="tel" id="phone" name="phone" placeholder="+380" required>
                 </div>
 
+                <!-- Виправлена структура радіо-кнопок статі -->
                 <div class="form-group-gender">
                     <span class="gender-label">Стать:</span>
-                    <label>
-                        <input type="radio" name="gender" value="female" required> Жінка
-                    </label>
-                    <label>
-                        <input type="radio" name="gender" value="male"> Чоловік
-                    </label>
+                    <input type="radio" id="gender-female" name="gender" value="female" required>
+                    <label for="gender-female" class="radio-label">Жінка</label>
+
+                    <input type="radio" id="gender-male" name="gender" value="male">
+                    <label for="gender-male" class="radio-label">Чоловік</label>
                 </div>
 
                 <button type="submit" class="submit-btn">Зареєструватися</button>
-                
-                <!-- Нова кнопка для входу без реєстрації -->
                 <a href="index.html" class="guest-btn">Зайти без реєстрації</a>
             </form>
         </div>
@@ -78,3 +77,4 @@
 
 </body>
 </html>
+
