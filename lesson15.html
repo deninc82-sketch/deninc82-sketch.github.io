@@ -1,0 +1,65 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lecture 15 - Objects</title>
+</head>
+<body>
+  <h1>JavaScript Objects</h1>
+
+  <script>
+    'use strict';
+
+    const user = {};
+    user.name = 'Іван';
+    user.surname = 'Сміт';
+    user.name = 'Петро';
+    delete user.name;
+
+    function isEmpty(obj) {
+      for (let key in obj) {
+        return false;
+      }
+      return true;
+    }
+
+    const Numbs = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    for (let i = 0; i < Numbs.length; i++) {
+      if (Numbs[i] % 2 === 0) {
+        console.log('Парне число з масиву Numbs:', Numbs[i]);
+      }
+    }
+
+    let salaries = {
+      John: 100,
+      Ann: 160,
+      Pete: 130
+    };
+
+    let sum = 0;
+    for (let key in salaries) {
+      sum += salaries[key];
+    }
+    console.log('Сума зарплат:', sum);
+
+    function multiplyNumeric(obj) {
+      for (let key in obj) {
+        if (typeof obj[key] === 'number') {
+          obj[key] *= 2;
+        }
+      }
+    }
+
+    let menu = {
+      width: 200,
+      height: 300,
+      title: "Моє меню"
+    };
+    multiplyNumeric(menu);
+    console.log('Об\'єкт menu після множення:', menu);
+
+    alert('Код успішно виконався! Перевірте консоль браузера (F12 -> Console) для перегляду результатів роботи об\'єктів та масивів.');
+  </script>
+</body>
+</html>

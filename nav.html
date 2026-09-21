@@ -3,8 +3,101 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/lesson9.css">
   <title>Exercises for lecture #9</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .nav {
+      background-color: #333;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 .5rem;
+    }
+
+    .link-list {
+      display: flex;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .link {
+      padding: .5rem;
+    }
+
+    .link:hover {
+      background-color: #777;
+}
+
+    .link a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .wrapper, .grow-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      width: 700px;
+      margin-bottom: 20px;
+    }
+
+    .item {
+      color: white;
+      padding: 10px;
+      text-align: center;
+    }
+
+    .item-blue {
+      background-color: blue;
+    }
+    .item-orange {
+      background-color: orange;  
+    }
+    .item-green {
+      background-color: green;
+    }
+
+    .wrapper .item {
+      flex: 1 1 0;
+    }
+
+    .grow-wrapper .item-blue {
+      flex-grow: 3;
+    }
+
+    .grow-wrapper .item-orange {
+      flex-grow: 1;
+    }
+
+    .grow-wrapper .item-green {
+      flex-grow: 1;
+    }
+
+    .flexbox {
+      --min: 30ch;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      padding: 0;
+      list-style: none;
+    }
+
+    .card {
+      flex: 1 1 var(--min);
+      border: 1px solid #ccc;
+      padding: 1rem;
+      background-color: #f9f9f9;
+    }
+  </style>
 </head>
 <body>
 

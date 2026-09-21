@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lecture №2 - об'єктна модель документа</title>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <style>
+        .first {
+            color: red;
+        }
+        .second {
+            color: blue;
+        }
+        .third {
+            color: green;
+            background-color: yellow;
+        }
+        .fourth {
+            color: gray;
+        }
+        .border {
+            border: solid red 1px;
+        }
+        .title {
+            padding: 1rem 2rem;
+            border: double 2px violet;
+        }
+        .dark-theme {
+            background-color: #222 !important;
+            color: #fff !important;
+        }
+        .dark-theme .container {
+            background-color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1 class='title' id='first-title'>First Title</h1>
+        </header>
+        
+        <p id="p1">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore accusantium distinctio explicabo iure possimus natus obcaecati fugiat voluptas id, eveniet ab, voluptate repellat? Inventore voluptate perferendis sequi distinctio qui consectetur.
+          <button id="btn1">It's First Button</button>
+        </p>
+    </div>
+    
+    <div class="container">
+        <header>
+            <h1 class='title' id='second-title'>Second Title</h1>
+        </header>
+        
+        <p id="p2">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore accusantium distinctio explicabo iure possimus natus obcaecati fugiat voluptas id, eveniet ab, voluptate repellat? Inventore voluptate perferendis sequi distinctio qui consectetur.
+          <button id="btn2">It's Second Button</button>
+        </p>
+    </div>
+    
+    <div class="container">
+        <header>
+            <h1 class='title' id='third-title'>Third Title</h1>
+        </header>
+        
+        <p id="p3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore accusantium distinctio explicabo iure possimus natus obcaecati fugiat voluptas id, eveniet ab, voluptate repellat? Inventore voluptate perferendis sequi distinctio qui consectetur.
+        <button id="btn3">It's Third Button</button>
+      </p>
+    </div>
+    
+    <div class="container">
+        <header>
+            <h1 class='title' id='fourth-title'>Fourth Title</h1>
+        </header>
+    
+        <p id="p4">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore accusantium distinctio explicabo iure possimus natus obcaecati fugiat voluptas id, eveniet ab, voluptate repellat? Inventore voluptate perferendis sequi distinctio qui consectetur.
+          <button id="btn4">It's Fourth Button</button>
+        </p>
+    </div>
+
+    <script>
+        'use strict';
+
+        const p1 = document.querySelector('#p1');
+        p1.style.backgroundColor = 'gold';
+
+        const p2 = document.querySelector('#p2');
+        p2.style.backgroundColor = 'gold';
+        p2.style.color = 'blue';
+        p2.style.fontSize = '2rem';
+
+        const p3 = document.querySelector('#p3');
+        p3.classList.add('third');
+
+        const p4 = document.querySelector('#p4');
+        p4.classList.add('fourth', 'border');
+
+        const btn1 = document.querySelector('#btn1');
+        btn1.style.backgroundColor = 'gold';
+        btn1.style.color = 'blue';
+
+        const btn2 = document.querySelector('#btn2');
+        btn2.addEventListener('click', () => {
+            p1.style.display = 'none';
+        });
+
+        const btn3 = document.querySelector('#btn3');
+        btn3.addEventListener('click', () => {
+            p1.style.display = 'block';
+        });
+
+        const btn4 = document.querySelector('#btn4');
+        btn4.addEventListener('click', () => {
+            document.body.classList.toggle('dark-theme');
+        });
+    </script>
+</body>
+</html>

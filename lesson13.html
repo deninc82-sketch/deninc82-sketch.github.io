@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lecture 13 - Functions</title>
+</head>
+<body>
+  <h1>JavaScript Functions</h1>
+
+  <script>
+    'use strict';
+
+    // 1. Варіанти функції checkAge
+    function checkAgeWithQuestion(age) {
+      return age > 18 ? true : confirm('Батьки дозволили?');
+    }
+
+    function checkAgeWithOr(age) {
+      return age > 18 || confirm('Батьки дозволили?');
+    }
+
+    // 2. Варіанти функції min
+    function minWithIf(a, b) {
+      if (a < b) {
+        return a;
+      } else {
+        return b;
+      }
+    }
+
+    function minWithQuestion(a, b) {
+      return a < b ? a : b;
+    }
+
+    // 3. Функція pow(x, n) та її запуск через prompt
+    function pow(x, n) {
+      let result = 1;
+      for (let i = 0; i < n; i++) {
+        result *= x;
+      }
+      return result;
+    }
+
+    const x = Number(prompt('Завдання pow(). Введіть число x:'));
+    const n = Number(prompt('Введіть степінь n (ціле число від 1):'));
+
+    if (n < 1 || !Number.isInteger(n)) {
+      alert('Будь ласка, введіть ціле число більше за 0');
+    } else {
+      alert('Результат піднесення до степеня pow(x, n): ' + pow(x, n));
+    }
+
+    // 4. Заміна функціональних виразів на стрілкові функції
+    const ask = (question, yes, no) => confirm(question) ? yes() : no();
+
+    ask(
+      "Ви згодні?",
+      () => alert("Ви погодились."),
+      () => alert("Ви скасували виконання.")
+    );
+  </script>
+</body>
+</html>

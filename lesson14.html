@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lecture 14 - Arrays and Loops</title>
+</head>
+<body>
+  <h1>JavaScript Arrays and Loops</h1>
+
+  <script>
+    'use strict';
+
+    const fruits = ['apple', 'banana', 'cantaloupe', 'blueberries', 'grapefruit'];
+
+    console.log('--- Цикл for ---');
+    for (let i = 0; i < fruits.length; i++) {
+      console.log(fruits[i]);
+    }
+
+    console.log('--- Цикл while ---');
+    let w = 0;
+    while (w < fruits.length) {
+      console.log(fruits[w]);
+      w++;
+    }
+
+    console.log('--- Цикл do...while ---');
+    let d = 0;
+    if (fruits.length > 0) {
+      do {
+        console.log(fruits[d]);
+        d++;
+      } while (d < fruits.length);
+    }
+
+    // ВИПРАВЛЕНО: заповнено масив цифрами за умовою
+    const Numbs = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    console.log('--- Парні елементи Numbs ---');
+    for (let i = 0; i < Numbs.length; i++) {
+      if (Numbs[i] % 2 === 0) {
+        console.log(Numbs[i]);
+      }
+    }
+
+    const names = ['Batman'];
+    names.push('Joker');
+    names.unshift('Bane');
+
+    if (!names.includes('Alfred')) {
+      names.push('Alfred');
+    }
+
+    const batmanIndex = names.indexOf('Batman');
+    if (batmanIndex !== -1) {
+      names.splice(batmanIndex, 1);
+    }
+    console.log('Масив names після маніпуляцій:', names);
+
+    // Функція sumInput
+    function sumInput() {
+      const numbers = [];
+      while (true) {
+        const value = prompt('Завдання sumInput(). Введіть число (або залиште порожнім/натисніть Скасувати для завершення):', '');
+        if (value === null || value === '' || isNaN(Number(value))) {
+          break;
+        }
+        numbers.push(Number(value));
+      }
+      let sum = 0;
+      for (let i = 0; i < numbers.length; i++) {
+        sum += numbers[i];
+      }
+      return sum;
+    }
+    alert('Сума введених чисел із функції sumInput(): ' + sumInput());
+
+    // Робота зі styles
+    const styles = ['Jazz', 'Blues'];
+    styles.push('Rock-n-Roll');
+
+    const middleIndex = Math.floor(styles.length / 2);
+    styles[middleIndex] = 'Classics';
+
+    const firstElement = styles.shift();
+    alert('Видалений перший елемент масиву styles: ' + firstElement);
+
+    styles.unshift('Rap', 'Reggae');
+    console.log('Фінальний масив styles:', styles);
+
+    alert('Всі завдання уроку 14 виконано! Результати роботи масивів дивіться в консолі (F12 -> Console).');
+  </script>
+</body>
+</html>
+
