@@ -1,38 +1,78 @@
 'use strict';
 
-const classes = ['first', 'second', 'third', 'fourth'];
+const alertBlock = document.querySelector('#alert');
 
-const p1 = document.querySelector('#p1');
-p1.style.backgroundColor = 'gold';
+const btnPrimary = document.querySelector('.btn-primary');
+btnPrimary.onclick = function() {
+    alertBlock.className = 'alert alert-primary';
+    alertBlock.textContent = 'A simple primary alert—check it out!';
+};
 
-const p2 = document.querySelector('#p2');
-p2.style.backgroundColor = 'gold';
-p2.style.color = 'blue';
-p2.style.fontSize = '2rem';
-
-const p3 = document.querySelector('#p3');
-p3.classList.add('third');
-
-const p4 = document.querySelector('#p4');
-p4.classList.add('fourth', 'border');
-
-const buttons = document.querySelectorAll('button');
-
-const btn1 = buttons[0];
-btn1.style.backgroundColor = 'gold';
-btn1.style.color = 'blue';
-
-const btn2 = buttons[1];
-btn2.addEventListener('click', () => {
-  p1.style.display = 'none';
+const btnSecondary = document.querySelector('.btn-secondary');
+btnSecondary.addEventListener('click', () => {
+    alertBlock.className = 'alert alert-secondary';
+    alertBlock.textContent = 'A simple secondary alert—check it out!';
 });
 
-const btn3 = buttons[2];
-btn3.addEventListener('click', () => {
-  p1.style.display = 'block';
+const btnSuccess = document.querySelector('.btn-success');
+btnSuccess.addEventListener('mouseover', () => {
+    alertBlock.className = 'alert alert-success';
+    alertBlock.textContent = 'A simple success alert—check it out!';
+});
+btnSuccess.addEventListener('mouseout', () => {
+    alertBlock.className = '';
+    alertBlock.textContent = '';
 });
 
-const btn4 = buttons[3];
-btn4.addEventListener('click', () => {
-  document.body.classList.toggle('dark-theme');
+const btnDanger = document.querySelector('.btn-danger');
+btnDanger.addEventListener('focus', () => {
+    alertBlock.className = 'alert alert-danger';
+    alertBlock.textContent = 'A simple danger alert—check it out!';
 });
+btnDanger.addEventListener('focusout', () => {
+    alertBlock.className = '';
+    alertBlock.textContent = '';
+});
+
+const btnLight = document.querySelector('.btn-light');
+const btnDark = document.querySelector('.btn-dark');
+
+function toggleMode() {
+    document.body.classList.toggle('dark-mode');
+    if (document.body.classList.contains('dark-mode')) {
+        btnLight.classList.remove('hide');
+        btnDark.classList.add('hide');
+    } else {
+        btnDark.classList.remove('hide');
+        btnLight.classList.add('hide');
+    }
+}
+
+btnLight.addEventListener('click', toggleMode);
+btnDark.addEventListener('click', toggleMode);
+
+const btnInfo = document.querySelector('.btn-info');
+btnInfo.addEventListener('keypress', (event) => {
+    if (event.key === 'Enter') {
+        event.preventDefault();
+        alertBlock.className = 'alert alert-info';
+        alertBlock.textContent = 'A simple info alert—check it out!';
+    }
+});
+
+const cards = document.querySelectorAll('.card');
+
+for (let i = 0; i < cards.length; i++) {
+    const cardTitle = cards[i].querySelector('.card-title');
+    console.log(cardTitle.textContent);
+}
+
+for (let i = 0; i < cards.length; i++) {
+    const cardTitle = cards[i].querySelector('.card-title');
+    const addToCartBtn = cards[i].querySelector('.add-to-cart');
+    
+    addToCartBtn.addEventListener('click', (event) => {
+        event.preventDefault();
+        console.log(cardTitle.textContent);
+    });
+}
